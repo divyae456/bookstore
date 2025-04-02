@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="BookStore API Test Suite" verbose="1">
+    <listeners>
+        <listener class-name="org.testng.reporters.XMLReporter"/>
+    </listeners>
+    
+    <test name="API Tests" preserve-order="true">
+        <classes>
+            <class name="com.bookstore.tests.AuthenticationTests">
+                <methods>
+                    <include name="testUserSignup"/>
+                    <include name="testUserLogin"/>
+                    <include name="testInvalidLogin"/>
+                </methods>
+            </class>
+            <class name="com.bookstore.tests.BookTests">
+                <methods>
+                    <include name="testAddBook"/>
+                    <include name="testGetBookById"/>
+                    <include name="testUpdateBook"/>
+                    <include name="testGetAllBooks"/>
+                    <include name="testDeleteBook"/>
+                    <include name="testGetNonExistentBook"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite> 
